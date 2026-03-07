@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>AutoLux Concessionária</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f4f4;
+}
+
+header{
+background:black;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+}
+
+.hero{
+text-align:center;
+padding:80px;
+background:#222;
+color:white;
+}
+
+.carros{
+padding:40px;
+text-align:center;
+}
+
+.lista-carros{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.carro{
+background:white;
+padding:20px;
+width:250px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.carro img{
+width:100%;
+border-radius:10px;
+}
+
+button{
+background:black;
+color:white;
+border:none;
+padding:10px;
+margin-top:10px;
+cursor:pointer;
+}
+
+footer{
+background:black;
+color:white;
+padding:30px;
+text-align:center;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+
+<h1>AutoLux</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#carros">Carros</a>
+<a href="#sobre">Sobre</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+<h2>Encontre o carro dos seus sonhos</h2>
+<p>Carros novos e usados com os melhores preços</p>
+</section>
+
+
+<section id="carros" class="carros">
+
+<h2>Carros disponíveis</h2>
+
+<div class="lista-carros">
+
+<div class="carro">
+<img src="https://picsum.photos/300/200">
+<h3>Toyota Corolla</h3>
+<p>Preço: 20.000$</p>
+<button onclick="verDetalhes('Toyota Corolla')">Ver detalhes</button>
+</div>
+
+<div class="carro">
+<img src="https://picsum.photos/300/201">
+<h3>BMW Série 3</h3>
+<p>Preço: 35.000$</p>
+<button onclick="verDetalhes('BMW Série 3')">Ver detalhes</button>
+</div>
+
+<div class="carro">
+<img src="https://picsum.photos/300/202">
+<h3>Ford Ranger</h3>
+<p>Preço: 40.000$</p>
+<button onclick="verDetalhes('Ford Ranger')">Ver detalhes</button>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="sobre">
+
+<h2 style="text-align:center;">Sobre nós</h2>
+
+<p style="text-align:center; max-width:600px; margin:auto;">
+A AutoLux é uma concessionária especializada na venda de carros
+novos e usados com garantia e qualidade.
+</p>
+
+</section>
+
+
+<footer>
+
+<h3>Contato</h3>
+
+<p>Telefone: +244 900 000 000</p>
+<p>Email: contato@autolux.com</p>
+<p>Luanda - Angola</p>
+
+<p>© 2026 AutoLux</p>
+
+</footer>
+
+
+<script>
+
+function verDetalhes(carro){
+alert("Você selecionou: " + carro)
+}
+
+</script>
+
+</body>
+</html>
