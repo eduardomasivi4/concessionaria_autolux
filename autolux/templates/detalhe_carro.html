@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>{{ carro.marca }} {{ carro.modelo }}</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f4f4;
+}
+
+header{
+background:black;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+}
+
+.container{
+padding:40px;
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+justify-content:center;
+}
+
+/* imagem */
+.imagem{
+flex:1;
+max-width:400px;
+}
+
+.imagem img{
+width:100%;
+border-radius:10px;
+}
+
+/* detalhes */
+.info{
+flex:1;
+max-width:400px;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.info h2{
+margin-top:0;
+}
+
+.preco{
+font-size:24px;
+color:green;
+margin:10px 0;
+}
+
+ul{
+list-style:none;
+padding:0;
+}
+
+ul li{
+padding:5px 0;
+border-bottom:1px solid #ddd;
+}
+
+button{
+background:black;
+color:white;
+border:none;
+padding:15px;
+width:100%;
+margin-top:15px;
+cursor:pointer;
+}
+
+footer{
+background:black;
+color:white;
+padding:30px;
+text-align:center;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>AutoLux</h1>
+
+<nav>
+<a href="/">Home</a>
+<a href="/carros/">Carros</a>
+</nav>
+</header>
+
+
+<div class="container">
+
+<!-- imagem -->
+<div class="imagem">
+
+{% if carro.imagem %}
+<img src="{{ carro.imagem.url }}">
+{% else %}
+<img src="https://picsum.photos/400/300">
+{% endif %}
+
+</div>
+
+
+<!-- info -->
+<div class="info">
+
+<h2>{{ carro.marca }} {{ carro.modelo }}</h2>
+
+<p class="preco">{{ carro.preco }} $</p>
+
+<ul>
+<li><strong>Ano:</strong> {{ carro.ano }}</li>
+<li><strong>Quilometragem:</strong> {{ carro.quilometragem }} km</li>
+<li><strong>Combustível:</strong> {{ carro.combustivel }}</li>
+<li><strong>Transmissão:</strong> {{ carro.transmissao }}</li>
+<li><strong>Cor:</strong> {{ carro.cor }}</li>
+</ul>
+
+<p>{{ carro.descricao }}</p>
+
+<button onclick="contactar()">Contactar vendedor</button>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<h3>Contato</h3>
+<p>+244 900 000 000</p>
+<p>contato@autolux.com</p>
+
+</footer>
+
+
+<script>
+
+function contactar(){
+alert("Entraremos em contacto consigo!")
+}
+
+</script>
+
+</body>
+</html>

@@ -81,29 +81,27 @@ margin-top:40px;
 <div class="lista-carros">
 
 {% for carro in carros %}
-<div class="carro">
+    <div class="carro">
 
-{% if carro.imagem %}
-<img src="{{ carro.imagem.url }}">
-{% else %}
-<img src="https://picsum.photos/300/200">
-{% endif %}
+        {% if carro.imagem %}
+            <img src="{{ carro.imagem.url }}">
+        {% else %}
+            <img src="https://picsum.photos/300/200">
+        {% endif %}
 
-<h3>{{ carro.marca }} {{ carro.modelo }}</h3>
+    <h3>{{ carro.marca }} {{ carro.modelo }}</h3>
 
-<p>Preço: {{ carro.preco }}$</p>
-<p>Ano: {{ carro.ano }}</p>
+    <p>Preço: {{ carro.preco }}$</p>
+    <p>Ano: {{ carro.ano }}</p>
+    
+    <a href="{% url 'detalhe_carro' carro.id %}">
+        <button>Ver detalhes</button>
+    </a>
 
-<button onclick="detalhes(
-'{{ carro.marca }} {{ carro.modelo }}',
-'{{ carro.ano }}',
-'{{ carro.combustivel }}'
-)">Ver detalhes</button>
-
-</div>
+    </div>
 
 {% empty %}
-<p>Sem carros disponiveis.</p>
+    <p>Sem carros disponiveis.</p>
 {% endfor %}
 
 </div>

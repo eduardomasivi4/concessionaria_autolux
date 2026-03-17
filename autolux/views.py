@@ -6,7 +6,11 @@ def home(request):
 
 def lista_carros(request):
     carros = Veiculo.objects.all()
-    return render (request, 'lista_carros.html', {'veiculo': carros})
+    return render (request, 'lista_carros.html', {'carros': carros})
 
 def detalhe_carro(request):
-    return render (request, 'detalhe_carro.html')
+    mais_info_carro = Veiculo.objects.get(id=id)
+    return render (request, 'detalhe_carro.html',{'carro': mais_info_carro})
+
+def sobre(request):
+    return render (request, 'sobre.html')
