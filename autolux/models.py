@@ -16,6 +16,7 @@ class Veiculo(models.Model):
     ]
 
     TRANSMISSAO_CHOICES = [
+        ("manual/automático", "Manual/Automático"),
         ("manual", "Manual"),
         ("automatico", "Automático"),
     ]
